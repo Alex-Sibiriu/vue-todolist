@@ -30,16 +30,21 @@
 
     <div class="new-task">
 
-      <input  placeholder="Nuovo task"type="text">
-      <button >Aggiungi</button>
+      <input
+        v-model="taskTemp"
+        @keyup.enter="addTask()"
+        placeholder="Nuovo task" type="text">
+      <button @click="addTask()">Aggiungi</button>
       <p class="error"></p>
     </div>
 
     <div class="task-container">
       <ul>
 
-        <li v-for="(task, index) in toDoList">
-          <span :class="{'done': task.done}">{{ task.nome }}</span>
+        <li
+          v-for="(task, index) in toDoList"
+          :class="{'done': task.done}">
+          <span>{{ task.nome }}</span>
           <i @click.stop="deleteTask(index)" class="fa-solid fa-trash-can"></i>
         </li>
 

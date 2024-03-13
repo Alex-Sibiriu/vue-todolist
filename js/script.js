@@ -21,7 +21,9 @@ createApp({
           nome: 'Tagliare l\'erba',
           done: false,
         }
-      ]
+      ],
+      taskTemp: '',
+      newTask: {}
     }
   },
 
@@ -29,6 +31,15 @@ createApp({
 
     deleteTask(index) {
       this.toDoList.splice(index, 1)
+    },
+
+    addTask() {
+      this.newTask = {
+        nome: this.taskTemp,
+        done: false
+      }
+      this.toDoList.unshift(this.newTask);
+      this.taskTemp = ''
     }
   },
 
