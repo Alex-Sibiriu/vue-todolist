@@ -76,3 +76,8 @@ img{
 .task-container li.done{
   text-decoration: line-through;
 }
+
+/* MY CLASSES */
+.done {
+  text-decoration: line-through;
+}
