@@ -39,8 +39,8 @@
     </div>
 
     <div class="task-container">
-      <ul>
 
+      <ul v-if="toDoList.length > 0">
         <li
           v-for="(task, index) in toDoList"
           @click="task.done = !task.done"
@@ -48,9 +48,8 @@
           <span>{{ task.nome }}</span>
           <i @click.stop="deleteTask(task, index)" class="fa-solid fa-trash-can"></i>
         </li>
-
       </ul>
-
+      <h3 v-else class="new-task">Non ci sono Task da fare.</h3>
     </div>
 
 
