@@ -30,8 +30,10 @@ createApp({
 
   methods: {
 
-    deleteTask(index) {
-      this.toDoList.splice(index, 1)
+    deleteTask(task, index) {
+      if (task.done) {
+        this.toDoList.splice(index, 1)
+      }
     },
 
     addTask() {
