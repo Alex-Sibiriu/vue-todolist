@@ -20,8 +20,9 @@ img{
 .error{
   color: red;
   font-size: .9rem;
+  font-weight: bold;
+  padding: 20px 0;
 }
-
 
 .logo{
   margin: 0 auto;
@@ -59,11 +60,13 @@ img{
   line-height: 40px;
   border-bottom: 1px solid lightgray;
   padding: 0 15px;
+  cursor: pointer;
 }
 .task-container li:hover{
   background-color: white;
 }
-.task-container li i{
+
+.task-container li i {
   float: right;
   line-height: 40px;
   cursor: pointer;

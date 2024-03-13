@@ -24,7 +24,7 @@ createApp({
       ],
       taskTemp: '',
       newTask: {},
-      taskError: ''
+      taskError: '',
     }
   },
 
@@ -32,7 +32,10 @@ createApp({
 
     deleteTask(task, index) {
       if (task.done) {
-        this.toDoList.splice(index, 1)
+        this.toDoList.splice(index, 1);
+        this.taskError = ''
+      } else {
+        this.taskError = 'Devi prima completare la Task'
       }
     },
 
@@ -42,6 +45,7 @@ createApp({
           nome: this.taskTemp,
           done: false
         }
+
         this.toDoList.unshift(this.newTask);
         this.taskTemp = '';
         this.taskError = ''

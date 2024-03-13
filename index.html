@@ -34,7 +34,9 @@
         v-model.trim="taskTemp"
         @keyup.enter="addTask()"
         placeholder="Nuovo task" type="text">
+
       <button @click="addTask()">Aggiungi</button>
+
       <p class="error">{{ taskError }}</p>
     </div>
 
@@ -49,7 +51,9 @@
           <i @click.stop="deleteTask(task, index)" class="fa-solid fa-trash-can"></i>
         </li>
       </ul>
+      
       <h3 v-else class="new-task">Non ci sono Task da fare.</h3>
+
     </div>
 
 
