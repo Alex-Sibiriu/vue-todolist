@@ -23,7 +23,8 @@ createApp({
         }
       ],
       taskTemp: '',
-      newTask: {}
+      newTask: {},
+      taskError: ''
     }
   },
 
@@ -34,12 +35,17 @@ createApp({
     },
 
     addTask() {
-      this.newTask = {
-        nome: this.taskTemp,
-        done: false
+      if (this.taskTemp.length >= 4 ) {
+        this.newTask = {
+          nome: this.taskTemp,
+          done: false
+        }
+        this.toDoList.unshift(this.newTask);
+        this.taskTemp = '';
+        this.taskError = ''
+      } else {
+        this.taskError = 'Attenzione! La task deve essere lunga almeno 4 lettere!'
       }
-      this.toDoList.unshift(this.newTask);
-      this.taskTemp = ''
     }
   },
 
